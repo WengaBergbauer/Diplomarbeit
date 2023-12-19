@@ -12,7 +12,7 @@ class _HomePageState extends State<Homepage> {
   final TextEditingController _timeController = TextEditingController();
 
   DateTime now = DateTime.now();
-  late String _formatted = DateFormat('hh:mm').format(now);
+  late final String _formatted = DateFormat('hh:mm').format(now);
   List<String> dropdownItems = ['Normale Buchung', 'Dienstgang', 'Homeoffice'];
   String selectedDropdownItem = 'Normale Buchung';
   bool isChecked = false;
@@ -26,14 +26,14 @@ class _HomePageState extends State<Homepage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 180.0),
+              const SizedBox(height: 180.0),
               // Display current time
               Text(
                 _formatted,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 50.0),
+                style: const TextStyle(fontSize: 50.0),
               ),
-              SizedBox(height: 20.0), // Add some spacing
+              const SizedBox(height: 20.0), // Add some spacing
               // Checkbox and text
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -46,14 +46,14 @@ class _HomePageState extends State<Homepage> {
                       });
                     },
                   ),
-                  SizedBox(width: 8.0),
-                  Text(
+                  const SizedBox(width: 8.0),
+                  const Text(
                     'Buchungsende',
                     style: TextStyle(fontSize: 18.0),
                   ),
                 ],
               ),
-              SizedBox(height: 20.0),
+              const SizedBox(height: 20.0),
               // Dropdown menu
               if (isChecked==false)
                 Center(
@@ -72,12 +72,12 @@ class _HomePageState extends State<Homepage> {
                     }).toList(),
                   ),
                 ),
-              Spacer(),
+              const Spacer(),
               // "Buchen" Button
               ElevatedButton(
                 onPressed: () {
                 },
-                child: Text('Buchen'),
+                child: const Text('Buchen'),
               ),
             ],
           ),
