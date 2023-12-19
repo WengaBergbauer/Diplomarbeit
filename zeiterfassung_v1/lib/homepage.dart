@@ -50,28 +50,28 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             MaterialButton(
               onPressed: writeData,
-              child: Text('Write'),
               color: Colors.blue[200],
+              child: const Text('Write'),
               ),
               MaterialButton(
               onPressed: readData,
-              child: Text('Read'),
               color: Colors.red[200],
+              child: const Text('Read'),
               ),
               MaterialButton(
               onPressed: deleteData,
-              child: Text('Delete'),
               color: Colors.green[200],
+              child: const Text('Delete'),
               ),
               MaterialButton(
               onPressed: writeBox,
-              child: Text('writeBox'),
               color: Colors.green[200],
+              child: const Text('writeBox'),
               ),
               MaterialButton(
               onPressed: readBox,
-              child: Text('readBox'),
               color: Colors.green[200],
+              child: const Text('readBox'),
               ),
           ]
         ))
