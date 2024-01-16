@@ -17,6 +17,12 @@ class _HomePageState extends State<Homepage> {
   String selectedDropdownItem = 'Normale Buchung';
   bool isChecked = false;
 
+
+  void buchen(){
+    //final newBuchung = Buchungen(BU_ID: 3000, BU_DN_ID: 22, BU_TIMESTAMP: DateTime.now(), BU_ABW_NR: 1);
+    //Hive.box<Buchungen>('buchungen').add(newBuchung);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,8 +81,7 @@ class _HomePageState extends State<Homepage> {
               const Spacer(),
               // "Buchen" Button
               ElevatedButton(
-                onPressed: () {
-                },
+                onPressed: buchen,
                 child: const Text('Buchen'),
               ),
             ],

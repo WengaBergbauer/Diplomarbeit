@@ -5,16 +5,22 @@ import 'package:zeiterfassung_v1/hivedb_Klassen/buchungen.dart';
 import 'package:zeiterfassung_v1/hivedb_Klassen/dienstnehmer.dart';
 import 'package:zeiterfassung_v1/hivedb_Klassen/parameter.dart';
 import 'package:zeiterfassung_v1/hivedb_Klassen/synch.dart';
-import 'package:zeiterfassung_v1/homepage.dart';
+import 'package:zeiterfassung_v1/dashboard.dart';
 
 void main() async{
   await Hive.initFlutter();
-  // await Hive.openBox('myBox');
+  
   await Hive.openBox<Dienstnehmer>('dienstnehmer');
   await Hive.openBox<Buchungen>('buchungen');
   await Hive.openBox<Abwesenheiten>('abwesenheiten');
   await Hive.openBox<Parameter>('parameter');
   await Hive.openBox<Synch>('synch');
+
+  Hive.registerAdapter(DienstnehmerAdapter());
+  Hive.registerAdapter(BuchungenAdapter());
+  Hive.registerAdapter(AbwesenheitenAdapter());
+  Hive.registerAdapter(ParameterAdapter());
+  Hive.registerAdapter(SynchAdapter());
 
 
   runApp(const MainApp());
@@ -27,7 +33,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      home: Homepage(),
     );
   }
 }
