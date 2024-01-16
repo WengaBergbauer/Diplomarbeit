@@ -15,4 +15,5 @@ class Buchungen extends HiveObject {
 
   @HiveField(3)
   late int BU_ABW_NR;
+  
 }
